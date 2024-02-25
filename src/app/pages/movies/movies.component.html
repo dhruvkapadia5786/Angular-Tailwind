@@ -1,0 +1,19 @@
+<!-- component -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mx-10 my-4">
+    @for(movie of movies; track movie.id){
+    <div class="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg" style="background-color: #bcabff;">
+        <div class="inline-flex shadow-lg border border-gray-200 rounded-2xl h-50 w-70 align-center">
+            <img class="rounded-md" [src]="'https://image.tmdb.org/t/p/w400'+ movie.poster_path" alt="" srcset="">
+        </div>
+
+        <h2 class="mt-4 font-bold text-xl">{{movie.original_title}}</h2>
+        
+        <p class="text-xs text-gray-500 text-center mt-3">
+            release_date: {{movie.release_date}}
+        </p>
+        <h6 class="mt-2 text-sm font-medium">Popularity: {{movie.popularity}}</h6>
+        <h6 class="mt-2 text-sm font-medium">Adults: {{movie.adult ? '18+' : 'Kids'}}</h6>
+        <h6 class="mt-2 text-sm font-medium">Views: {{movie.vote_count}}</h6>
+    </div>
+    }
+</div>
